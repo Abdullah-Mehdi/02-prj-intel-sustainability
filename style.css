@@ -1,1 +1,118 @@
-/* Add your CSS here */
+/* Reset some default browser styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f7fa;
+  color: #222;
+}
+
+/* Header styles */
+header {
+  background: #0068b5; /* Intel blue */
+  color: #fff;
+  padding: 32px 16px 24px 16px;
+  text-align: center;
+}
+
+header img {
+  width: 80px;
+  margin-bottom: 12px;
+}
+
+header h1 {
+  margin: 0 0 12px 0;
+  font-size: 2rem;
+}
+
+header p {
+  margin: 0 auto;
+  max-width: 400px;
+  font-size: 1rem;
+}
+
+/* Timeline section styles using CSS Grid */
+section {
+  display: grid; /* Use grid layout */
+  grid-auto-flow: column; /* Place cards in a horizontal row */
+  grid-auto-columns: 260px; /* Each card is 260px wide */
+  gap: 20px; /* Space between cards */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  padding: 32px 40px;
+  scroll-snap-type: x mandatory; /* Enable scroll snap */
+  justify-content: center; /* Center the cards in the section */
+}
+
+/* Timeline card styles */
+section > div {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 20px 16px;
+  scroll-snap-align: start; /* Snap each card to the start */
+  transition: box-shadow 0.3s, transform 0.3s; /* Smooth hover effect */
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Card hover effect */
+section > div:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  transform: translateY(-8px) scale(1.03); /* Slight lift and scale */
+}
+
+/* Card image styles */
+section img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+/* Card headings */
+section h2 {
+  margin: 0 0 4px 0;
+  font-size: 1.2rem;
+  color: #0068b5;
+}
+
+section h3 {
+  margin: 0 0 8px 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Card paragraph */
+section p {
+  font-size: 0.95rem;
+  color: #444;
+  margin: 0;
+  text-align: center;
+}
+
+/* Timeline instruction text */
+body > p {
+  text-align: center;
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 32px;
+}
+
+/* Responsive: Stack cards vertically on small screens */
+@media (max-width: 600px) {
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    overflow-x: visible;
+    scroll-snap-type: none;
+    padding: 24px 8px;
+  }
+  section > div {
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+}
